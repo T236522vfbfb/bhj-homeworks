@@ -8,15 +8,15 @@ const removeTask = e => {
 const addTask = e => {
 	tasksList.innerHTML +=
 		`<div class="task">
-      <div class="task__title">
-        ${inputBox.value}
-      </div>
-      <a href="#" class="task__remove">&times;</a>
-    </div>`;
+			<div class="task__title">
+				${inputBox.value}
+			</div>
+			<a href="#" class="task__remove">&times;</a>
+		</div>`;
 
 	inputBox.value = "";
 
-  [...(tasksList.getElementsByClassName("task__remove"))].forEach(element => {
+  	[...(tasksList.getElementsByClassName("task__remove"))].forEach(element => {
 		element.addEventListener("click", removeTask)
 	});
 
@@ -24,6 +24,6 @@ const addTask = e => {
 }
 
 document.getElementById("tasks__add").addEventListener("click", addTask);
-inputBox.addEventListener("keypress", e => {
-	if (e.keyCode == 13) addTask(e);
-});
+// inputBox.addEventListener("keypress", e => {
+// 	if (e.keyCode == 13) addTask(e);
+// });
